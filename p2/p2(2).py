@@ -23,10 +23,23 @@ class human:
         pass
 
     def work(self):
-        pass
+        if not self.car.drive():
+            if self.car.fuel < 20 :
+                self.shopping('fuel')
+            else:
+                self.to_repair()
+        self.mony += self.job.salary
+        self.gladness -= self.job.gladness_less
+        self.satieti -= 4
+
+
 
     def shopping(self):
-        pass
+        if not self.car.drive:
+            if self.car.fuel < 20:
+                manage = 'fuel'
+            else:
+                self.to_repair()
 
     def chill(self):
         pass
@@ -69,7 +82,24 @@ class Hause:
 
 class Gob:
     def __init__(self,job_list):
-        pass
+        self.job = random.choice(list(job_list))
+        self.salary = job_list[self.job]['salary']
+        self.gladness_less = job_list[self.job]['gladness_less']
+
+job_list = {
+    'cleaner':{
+        'salary': 20,
+        'gladness_less': 20
+    },
+    'teacher': {
+        'salary': 20,
+        'gladness_less': 30
+    },
+    'traider': {
+        'salary': 60,
+        'gladness_less': 5
+    }
+}
 
 brands_of_car = {
     'BMW':{
