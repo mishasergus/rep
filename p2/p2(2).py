@@ -11,16 +11,23 @@ class human:
         self.satieti = 50
 
     def get_home(self):
-        pass
+        self.home = Hause()
 
     def get_car(self):
-        pass
+        self.car = Auto(brands_of_car)
 
     def get_gob(self):
-        pass
+        if self.car.drive():
+            pass
+        else:
+            self.to_repair()
+        self.jpb = Job(job_list)
 
     def eat(self):
-        pass
+        if self.home.food<=0:
+            self.shopping('food')
+        else:
+            if self.satieti > 1
 
     def work(self):
         if not self.car.drive():
@@ -40,18 +47,37 @@ class human:
                 manage = 'fuel'
             else:
                 self.to_repair()
+        if manage =='fuel':
+            print("i bought fuel")
+            self.car.fuel +=100
+            self.mony -= 100
+        elif manage == 'food':
+            print("i bought food")
+            self.car.food += 50
+            self.mony -= 50
+        elif manage == 'delicacies'
+            self.gladness += 10
+            self.satieti +=2
+            self.mony -= 15
 
     def chill(self):
-        pass
+        self.gladness += 10
+        self.home.mess += 5
 
     def clean_home(self):
-        pass
+        self.gladness -= 5
+        self.home.mess = 0
 
     def to_repair(self):
-        pass
+        self.car.strength += 10
+        self.mony -= 50
 
     def days_indexes(self, day):
-        pass
+        day = f'today the {day} of {self.name} life'
+        print(f'day:=^50')
+        print(f'{self.name} indexes')
+        print(f'mony - {self.mony}')
+        print(f'gladness - {self.gladness}')
 
     def is_alive(self):
         pass
